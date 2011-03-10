@@ -822,10 +822,10 @@ for (csID = csNom: csID <= csPre: ++ csID) {
            }
 
   Drop:    switch(n)
-           {   1: print_ret (CCNom) x1, " уже положен", (SAEnd) x1, ".";
+           {   1: print_ret "У тебя нет ", (cAcc) x1, ".";
                2: print_ret (CCNom) x1, " не у тебя.";
                3: "(сначала сняв ", (cAcc) x1, " с себя)";
-               4: print_ret (CCNom) x1, " положен", (SAEnd) x1, ".";
+               4: print_ret "Брошен", (SAEnd) x1, ".";
            }
 
   Remove:  switch(n)
