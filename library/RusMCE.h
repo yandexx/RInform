@@ -26,8 +26,8 @@ Array  Tparse	-> 6;
   for (i = 0: i ~= len: i ++) Tbuffer->(2+i) = buf->i;
   Tbuffer->(2+len) = 0;
   Tparse->0 = 1;
-  @tokenise Tbuffer Tparse;
-  return Tparse-->1;
+  !@tokenise Tbuffer Tparse;
+  !return Tparse-->1;
 ];
 
 ! DLx:
@@ -42,8 +42,8 @@ Array  Tparse	-> 6;
   Tbuffer->(2+len) = term;
   Tbuffer->(3+len) = 0;
   Tparse->0 = 1;
-  @tokenise Tbuffer Tparse;
-  return Tparse-->1;
+  !@tokenise Tbuffer Tparse;
+  !return Tparse-->1;
 ];
 
 Attribute fem_grammar;			! (тип склонения женского рода)
@@ -757,9 +757,9 @@ if (csID ~= 0) {
 
 Scratch-->0 = ScrLen-1;
 
-@output_stream 3 Scratch;
+!@output_stream 3 Scratch;
 print (object) obj;
-@output_stream -3;
+!@output_stream -3;
 
 if (ucase) Scratch->2 = LtoU (Scratch->2);	! (в верхний регистр)
 

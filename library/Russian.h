@@ -19,51 +19,51 @@ System_file;
 Constant LanguageVersion = "@<<Информ@>>: Русская версия 0.75-mod, март 2010";
 
 ! Алфавит
-Array Alphabet ->
-    ! (строчные)
-    'а' 'б' 'в' 'г' 'д' 'е' 'ё' 'ж' 'з' 'и' 'й' 'к' 'л' 'м' 'н'
-    'о' 'п' 'р' 'с' 'т' 'у' 'ф' 'х' 'ц' 'ч' 'ш' 'щ' 'ъ' 'ы' 'ь'
-    'э' 'ю' 'я'
-    ! (заглавные)
-    'А' 'Б' 'В' 'Г' 'Д' 'Е' 'Ё' 'Ж' 'З' 'И' 'Й' 'К' 'Л' 'М' 'Н'
-    'О' 'П' 'Р' 'С' 'Т' 'У' 'Ф' 'Х' 'Ц' 'Ч' 'Ш' 'Щ' 'Ъ' 'Ы' 'Ь'
-    'Э' 'Ю' 'Я';
+!Array Alphabet ->
+!    ! (строчные)
+!    'а' 'б' 'в' 'г' 'д' 'е' 'ё' 'ж' 'з' 'и' 'й' 'к' 'л' 'м' 'н'
+!    'о' 'п' 'р' 'с' 'т' 'у' 'ф' 'х' 'ц' 'ч' 'ш' 'щ' 'ъ' 'ы' 'ь'
+!    'э' 'ю' 'я'
+!    ! (заглавные)
+!    'А' 'Б' 'В' 'Г' 'Д' 'Е' 'Ё' 'Ж' 'З' 'И' 'Й' 'К' 'Л' 'М' 'Н'
+!    'О' 'П' 'Р' 'С' 'Т' 'У' 'Ф' 'Х' 'Ц' 'Ч' 'Ш' 'Щ' 'Ъ' 'Ы' 'Ь'
+!    'Э' 'Ю' 'Я';
 
-Constant MinChr = 155;			! min char to redefine
-Constant MaxChr = 251;			! max char to redefine
-Constant AlphaCnt = 33;			! # of characters
+!Constant MinChr = 155;			! min char to redefine
+!Constant MaxChr = 251;			! max char to redefine
+!Constant AlphaCnt = 33;			! # of characters
 
 ! All remappables are in range MinChr to MaxChr
-Array AlphaXlt -> (MaxChr+1-MinChr);
+!Array AlphaXlt -> (MaxChr+1-MinChr);
 
 ! Initialise translation table
-[ XltInit
-  ch rc;
-
-  for (ch = MinChr: ch <= MaxChr: ++ ch) AlphaXlt->(ch-MinChr) = 255;
-
-  for (rc = 0: rc < 2*AlphaCnt: ++ rc) {
-	ch = Alphabet->rc;
-	if (MinChr <= ch && ch <= MaxChr) AlphaXlt->(ch-MinChr) = rc;
-	}
-  ];
+![ XltInit
+!  ch rc;
+!
+!  for (ch = MinChr: ch <= MaxChr: ++ ch) AlphaXlt->(ch-MinChr) = 255;
+!
+!  for (rc = 0: rc < 2*AlphaCnt: ++ rc) {
+!	ch = Alphabet->rc;
+!	if (MinChr <= ch && ch <= MaxChr) AlphaXlt->(ch-MinChr) = rc;
+!	}
+!  ];
 
 ! Lowercase to Uppercase
 [ LtoU ch rc;
-  if (MinChr <= ch && ch <= MaxChr) {
-  	rc = AlphaXlt->(ch-MinChr);
-        if (0 <= rc && rc < AlphaCnt) return Alphabet->(rc+AlphaCnt);
-	}
-
+!  if (MinChr <= ch && ch <= MaxChr) {
+!  	rc = AlphaXlt->(ch-MinChr);
+!        if (0 <= rc && rc < AlphaCnt) return Alphabet->(rc+AlphaCnt);
+!	}
+!
   return ch;
   ];
 
 ! Uppercase to Lowercase
 [ UtoL ch rc;
-  if (MinChr <= ch && ch <= MaxChr) {
-  	rc = AlphaXlt->(ch-MinChr);
-        if (AlphaCnt <= rc && rc < 2*AlphaCnt) return Alphabet->(rc-AlphaCnt);
-	}
+!  if (MinChr <= ch && ch <= MaxChr) {
+!  	rc = AlphaXlt->(ch-MinChr);
+!        if (AlphaCnt <= rc && rc < 2*AlphaCnt) return Alphabet->(rc-AlphaCnt);
+!	}
 
   return ch;
   ];
@@ -138,7 +138,7 @@ CompassDirection -> in_obj "вход/"
 
   give thedark female ~male ~neuter;		! (т.к. "темнота")
 
-  XltInit ();					! (установить алфавитные таблицы)
+  !XltInit ();					! (установить алфавитные таблицы)
 ];
 
 ! ---------------------------------------------------------------------------
