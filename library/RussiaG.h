@@ -273,8 +273,8 @@ Verb	'l!' 'x!'
                 * 'внутри' cGen_noun		-> Search
                 * 'под' cIns_noun			-> LookUnder
                 * 'под' cAcc_noun			-> LookUnder
-                * 'о' topic 'в'/'во' cPre_noun		-> Consult
-                * 'в'/'во' cPre_noun 'о' topic		-> Consult;
+                * 'о'/'об'/'обо' topic 'в'/'во' cPre_noun		-> Consult
+                * 'в'/'во' cPre_noun 'о'/'об'/'обо' topic		-> Consult;
 
 Object "смотреть" VerbDepot
 	with name 'l!' 'x!' 'г!' 'смотр' 'см' 'о//' 'гл' 'гля' 'гляд';
@@ -289,8 +289,8 @@ Object "изучить" VerbDepot
 ! "читать"
 Verb	'чит' 'прочесть'
                 * cAcc_noun				-> Examine
-                * 'в'/'во' cPre_noun 'о' topic		-> Consult
-                * 'о' topic 'в'/'во' cPre_noun		-> Consult;
+                * 'в'/'во' cPre_noun 'о'/'об'/'обо' topic		-> Consult
+                * 'о'/'об'/'обо' topic 'в'/'во' cPre_noun		-> Consult;
 
 Object "читать" VerbDepot
 	with name 'чит' 'прочесть';
@@ -300,8 +300,8 @@ Verb	'иск' 'ищ'
 	'ыск' 'ыщ'
                 * cAcc_noun				-> Search
                 * 'в'/'во' cPre_noun			-> Search
-                * 'в'/'во' cPre_noun 'о' topic		-> Consult
-                * 'о' topic 'в'/'во' cPre_noun		-> Consult
+                * 'в'/'во' cPre_noun 'о'/'об'/'обо' topic		-> Consult
+                * 'о'/'об'/'обо' topic 'в'/'во' cPre_noun		-> Consult
                 * topic 'в'/'во' cPre_noun		-> Consult
                 * 'в'/'во' cPre_noun topic		-> Consult;
 
@@ -532,7 +532,7 @@ Object "ответить" VerbDepot
 ! "[рас]сказать"/"сообщить"
 Verb	'сказ' 'скаж'
 	'сообщ'
-                * cDat_creat 'о'/'про' topic	-> Tell
+                * cDat_creat 'о'/'об'/'обо'/'про' topic	-> Tell
                 * cDat_creat topic		-> AskTo;
 
 Object "сказать" VerbDepot
@@ -540,9 +540,9 @@ Object "сказать" VerbDepot
 
 ! "[рас]спросить"
 Verb	'спрос'
-                * cAcc_creat 'о'/'про' topic		-> Ask
-                * 'у' cAcc_creat 'о'/'про' topic	-> Ask
-                * 'о'/'про' topic 'у' cAcc_creat	-> Ask reverse;
+                * cAcc_creat 'о'/'об'/'обо'/'про' topic		-> Ask
+                * 'у' cAcc_creat 'о'/'об'/'обо'/'про' topic	-> Ask
+                * 'о'/'об'/'обо'/'про' topic 'у' cAcc_creat	-> Ask reverse;
 
 Object "спросить" VerbDepot
 	with name 'спрос';
