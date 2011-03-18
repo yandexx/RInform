@@ -831,7 +831,7 @@ for (csID = csNom: csID <= csPre: ++ csID) {
   Remove:  switch(n)
            {   1: print_ret (CCNom) x1, " закрыт", (SAEnd) x1, ".";
                2: print_ret (CCNom) x1, " не наход", (V2bEnd) x1, "ся ",
-               	IIF (second has supporter, "на ", "в "), (cPre) second, ".";
+               	(string) IIF (second has supporter, "на ", "в "), (cPre) second, ".";
                3: print_ret (CCNom) x1, (string) IIF (second has supporter, " поднят", " извлечён"), (SAEnd) x1,
                		(string) IIF (second has supporter, " c ", " из "), (cGen) second, ".";
            }
@@ -895,7 +895,7 @@ for (csID = csNom: csID <= csPre: ++ csID) {
                		  (cAcc) x1, ")^";
            }
 
-  GetOff:  "Но ты не находишься ", IIF (x1 has supporter, "на ", "в "), (cPre) x1, ".";
+  GetOff:  "Но ты не находишься ", (string) IIF (x1 has supporter, "на ", "в "), (cPre) x1, ".";
 
   Exit:    switch(n)
            {   1: "Но ты сейчас не находишься в/на чем-либо.";
